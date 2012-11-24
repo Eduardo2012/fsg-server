@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
 
@@ -34,13 +35,17 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        getWindow().setBackgroundDrawableResource(R.drawable.background_image);
+        
+    
+        
         Log.i(TAG, "MainActivity created.");
         
 
         _client = new DTNClient();
         
 		// create registration
-		_registration = new Registration("sender");
+		_registration = new Registration("fsg");
     	
 		// register own data handler for incoming bundles
 		_client.setDataHandler(_data_handler);

@@ -6,7 +6,7 @@
     <string name="main_activity_button_1">JSON - Team</string>
     <string name="main_activity_button_2">JSON - Fahrer</string>
     <string name="main_activity_button_3">JSON - Event</string>
-    <string name="main_activity_button_4">(Blacklist -> NOCH NICHT)</string>
-    <string name="main_activity_button_5">(5) Auf Wiedersehen!</string>
+    <string name="main_activity_button_4">JSON - Geräte-Blacklist</string>
+    <string name="main_activity_button_5">JSON - Bänder-Blacklist</string>
 
 </resources>

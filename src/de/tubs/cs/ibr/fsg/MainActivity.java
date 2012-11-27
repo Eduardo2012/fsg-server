@@ -51,15 +51,15 @@ public class MainActivity extends Activity {
 		// register own data handler for incoming bundles
 		_client.setDataHandler(_data_handler);
 
-		Log.d(TAG, "activity created");
+		Log.i(TAG, "activity created");
 		
 		try {
 			_client.initialize(this, _registration);
-			Log.d(TAG, "onCreate are done without errors!");
+			Log.i(TAG, "onCreate are done without errors!");
 		} catch (ServiceNotAvailableException e) {
-			Log.d(TAG, "ServiceNotAvailableException");
+			Log.e(TAG, "ServiceNotAvailableException");
 		} catch (SecurityException ex) {
-			Log.d(TAG, "SecurityException");
+			Log.e(TAG, "SecurityException");
 		}
 		
 		
@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
 		
 		super.onDestroy();
 		
-		Log.d(TAG, "activity destroyed");
+		Log.i(TAG, "activity destroyed");
 	}
     
     
@@ -94,6 +94,7 @@ public class MainActivity extends Activity {
     	switch (view.getId() ){
     	case R.id.button1:
     		try {
+    			Log.i(TAG, "Button 1 clicked");
     			String teams = DummyDataGenerator.createDataSet(200, DummyDataGenerator.TEAMS_DATA_TYPE);
 				this.sendMessage(teams);
 			} catch (Exception e) {
@@ -103,7 +104,8 @@ public class MainActivity extends Activity {
     		break;
     	case R.id.button2:
     		try {
-    			String drivers = DummyDataGenerator.createDataSet(2000, DummyDataGenerator.DRIVERS_DATA_TYPE);
+    			Log.i(TAG, "Button 2 clicked");
+    			String drivers = DummyDataGenerator.createDataSet(1000, DummyDataGenerator.DRIVERS_DATA_TYPE);
 				this.sendMessage(drivers);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -112,6 +114,7 @@ public class MainActivity extends Activity {
     		break;
     	case R.id.button3:
     		try {
+    			Log.i(TAG, "Button 3 clicked");
 				this.sendMessage("{\"Classes\":[{\"name\":\"FSC\",\"EventID\":9},{\"name\":\"FSE\",\"EventID\":10}]}");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -120,6 +123,7 @@ public class MainActivity extends Activity {
     		break;
     	case R.id.button4:
     		try {
+    			Log.i(TAG, "Button 4 clicked");
 				this.sendMessage("[{\"DeviceID\":1111,\"Timestamp\":\"1353949660\"},{\"DeviceID\":2222,\"Timestamp\":\"1353946060\"},{\"DeviceID\":3333,\"Timestamp\":\"1353942460\"},{\"DeviceID\":4444,\"Timestamp\":\"1353938860\"},{\"DeviceID\":5555,\"Timestamp\":\"1353935260\"},{\"DeviceID\":6666,\"Timestamp\":\"1353931660\"}]");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -128,6 +132,7 @@ public class MainActivity extends Activity {
     		break;
     	case R.id.button5:
     		try {
+    			Log.i(TAG, "Button 5 clicked");
 				this.sendMessage("[{\"TagID\":111},{\"TagID\":222},{\"TagID\":333},{\"TagID\":444}]"	);
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -29,7 +29,8 @@ public class DummyDataGenerator {
 	 * @throws Exception Ein Fahler sollte nur dann auftreten, wenn Benutzer der Methode nicht die static Konstanten "DRIVERS_DATA_TYPE" und "TEAMS_DATA_TYPE" benutzen sondern selbst einen Integer-Wert angeben.
 	 */
 	public static String createDataSet(int amount, int dataTyp) throws Exception{
-		String result = "[";
+		StringBuilder result = new StringBuilder();
+		result.append("[");
 		String data_xml = "";
 		
 		if (dataTyp==DummyDataGenerator.DRIVERS_DATA_TYPE){
@@ -41,14 +42,14 @@ public class DummyDataGenerator {
 		}
 		
 		for(int i=0; i<amount; i++){
-			result = result + data_xml;
+			result.append(data_xml);
 			if (i<amount-1){
-				result = result + ",";
+				result.append(",");
 			}
 		}
 		
-		result = result + "]";
-		return result;
+		result = result.append("]");
+		return result.toString();
 	}
 	
 

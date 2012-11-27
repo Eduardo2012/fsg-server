@@ -3,4 +3,10 @@
    <color name="light_blue">#c88ba3fb</color>
    <color name="light_grey">#c8dbdbdb</color>
    
+   <color name="button_start_background">#c8E4FF33</color>
+   <color name="button_end_background">#c8657501</color> 
+   
+   <color name="button_start_hover">#c86b6b6b</color>
+   <color name="button_end_hover">#c80e0e0e</color>
+   
 </resources>

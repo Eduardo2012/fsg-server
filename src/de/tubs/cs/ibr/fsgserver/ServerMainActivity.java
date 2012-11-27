@@ -1,6 +1,7 @@
-package de.tubs.cs.ibr.fsg;
+package de.tubs.cs.ibr.fsgserver;
 
-import de.tubs.cs.ibr.fsg.testing.DummyDataGenerator;
+import de.tubs.cs.ibr.fsgserver.R;
+import de.tubs.cs.ibr.fsgserver.testing.DummyDataGenerator;
 import de.tubs.ibr.dtn.api.Block;
 import de.tubs.ibr.dtn.api.DTNClient;
 import de.tubs.ibr.dtn.api.DataHandler;
@@ -17,7 +18,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 
-public class MainActivity extends Activity {
+public class ServerMainActivity extends Activity {
 
 	private final static String TAG = "FSG-Server";
 	
@@ -149,9 +150,9 @@ public class MainActivity extends Activity {
 	{
 		Session s = _client.getSession();
 		
-		SingletonEndpoint destination = new SingletonEndpoint("dtn://android-e782a13f.dtn/fsg");
+		//SingletonEndpoint destination = new SingletonEndpoint("dtn://android-e782a13f.dtn/fsg");
 		//SingletonEndpoint destination = new SingletonEndpoint("dtn://android-7bfb105d.dtn/fsg");
-		//GroupEndpoint destination = new GroupEndpoint("dtn://fsg.dtn/broadcast");
+		GroupEndpoint destination = new GroupEndpoint("dtn://fsg.dtn/broadcast");
 		
 		if (!s.send(destination, 600, msg.getBytes())){
 			throw new Exception("Can not send the JSON-Data");

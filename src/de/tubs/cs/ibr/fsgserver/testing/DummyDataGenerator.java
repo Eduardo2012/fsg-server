@@ -1,4 +1,4 @@
-package de.tubs.cs.ibr.fsg.testing;
+package de.tubs.cs.ibr.fsgserver.testing;
 
 
 
